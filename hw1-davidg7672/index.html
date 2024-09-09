@@ -9,6 +9,10 @@
                 background-color: aquamarine;
                 color: blue;
             }
+
+            .button-color {
+                background-color: aquamarine;
+            }
         </style>
     </head>
     <body>
@@ -16,9 +20,13 @@
         <p>
             <strong>Hoping</strong> understand <em>web development</em> to the
             point where I'm able to deploy my first
-            <strong><em>ever website</em></strong>
+            <strong><em>ever website.</em></strong> Super excited to learn
+            different types of databases. So essentially the different between
+            <em>MySQL</em> and <strong>NoSQL</strong> data bases!
         </p>
-        <button onclick="buttonPressed()">Button</button>
+        <button id="my-button" class="button-color" onclick="buttonPressed()">
+            Button
+        </button>
 
         <br />
         <br />
@@ -37,7 +45,15 @@
             >David's Frog</a
         >
         <script>
+            document
+                .getElementsById("my-button")
+                .addEventListener("click", buttonPressed);
+
             function buttonPressed() {
+                document
+                    .getElementById("my-button")
+                    .classList.toggle("button-color");
+
                 alert("You Press the Button!");
             }
         </script>
